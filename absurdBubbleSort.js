@@ -9,7 +9,22 @@ const reader = readline.createInterface({
 function askIfGreaterThan(el1, el2, callback) {
   // Prompt user to tell us whether el1 > el2; pass true back to the
   // callback if true; else false.
+  console.log(`el1 is: ${el1} and el2 is: ${el2}`);
+  reader.question(`Is el1 > el2? `, function (answer) {
+    if (answer ==="yes") {
+      reader.close();
+      return true;
+    } else {
+      reader.close();
+      return false;
+    }
+
+  });
+
 }
+
+let ex = new askIfGreaterThan(5, 6);
+
 
 // Once you're done testing askIfGreaterThan with dummy arguments, write this.
 function innerBubbleSortLoop(arr, i, madeAnySwaps, outerBubbleSortLoop) {
